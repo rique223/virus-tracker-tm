@@ -3,7 +3,7 @@ html, body, #app, #app>div, #root {
   width: 100vw;
 }
 
-html {
+* {
   box-sizing: border-box;
 }
 
