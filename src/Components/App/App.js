@@ -1,6 +1,5 @@
-import logo from '../../logo.svg';
 import './App.css';
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Container, Center } from "@chakra-ui/react";
 import TextBox from '../TextBox/TextBox';
 
 function App() {
@@ -10,7 +9,9 @@ function App() {
           
       </Box>
       <Box bg="#EAEFEC" w="100%" h="66%" p={0} color="#20481E" alignItems="center">
-        <TextBox/>
+        <Center color="#20481E" h="100%">
+          <TextBox/>
+        </Center>
       </Box>
     </Container>
   );
