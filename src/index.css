@@ -1,3 +1,12 @@
+html, body, #app, #app>div, #root {
+  height: 100%;
+  width: 100vw;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
