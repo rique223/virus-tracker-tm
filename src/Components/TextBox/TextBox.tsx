@@ -1,7 +1,10 @@
 import './TextBox.css';
 import { Box, Text } from "@chakra-ui/react";
+import { ReactElement } from 'react';
 
-function TextBox() {
+import React from 'react';
+
+const TextBox: React.FC = (): ReactElement => {
   return (
     <Box padding="4" maxW="100%">
         <Text 
