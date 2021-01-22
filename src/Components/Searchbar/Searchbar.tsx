@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Searchbar: React.FC = (): ReactElement => {
-  const search = (event: React.MouseEvent) => {
+  const search = (event: React.MouseEvent): void => {
     console.log("DEU CERTO!");
   }
 
-  const searchEnter = (event: React.KeyboardEvent) => {
+  const searchEnter = (event: React.KeyboardEvent): void => {
     if(event.key === 'Enter') {
       console.log("Deu Cert com Enter!");
     }

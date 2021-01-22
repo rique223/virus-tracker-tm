@@ -24,6 +24,7 @@ const App: React.FC = (): ReactElement => {
             <NavBar></NavBar>
             <Searchbar/>
           </Box>
+          
           <Box bg="#EAEFEC" w="100%" h="60%" p={0} color="#20481E" alignItems="center">
             <Center color="#20481E" h="100%">
               <TextBox/>
