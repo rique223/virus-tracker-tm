@@ -29,6 +29,7 @@ const Searchbar: React.FC = (): ReactElement => {
           border="1px"
           borderStyle="solid"
           borderColor="#000"
+          borderRadius="13px"
           boxShadow="0px 2px 4px 2px rgba(0, 0, 0, 0.25)"
         />
         
@@ -43,7 +44,7 @@ const Searchbar: React.FC = (): ReactElement => {
               height="99px"
               w="100px"
               borderLeftRadius="0"
-              borderRightRadius="10"
+              borderRightRadius="10px"
               _hover={{
                 background: "rgba(69, 155, 65, 0.80)"
               }}

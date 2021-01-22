@@ -19,17 +19,17 @@ const theme: FunctionComponent = extendTheme({
 const App: React.FC = (): ReactElement => {
   return (
     <ChakraProvider theme={theme}>
-      <Container maxW="100%" m={0} p={0} h="100%">
-        <Box bg="#5CDB96" w="100%" h="40%" p={2} color="White">
-          <NavBar></NavBar>
-          <Searchbar/>
-        </Box>
-        <Box bg="#EAEFEC" w="100%" h="60%" p={0} color="#20481E" alignItems="center">
-          <Center color="#20481E" h="100%">
-            <TextBox/>
-          </Center>
-        </Box>
-      </Container>
+        <Container maxW="100%" m={0} p={0} h="100%">
+          <Box bg="#5CDB96" w="100%" h="40%" p={2} color="White">
+            <NavBar></NavBar>
+            <Searchbar/>
+          </Box>
+          <Box bg="#EAEFEC" w="100%" h="60%" p={0} color="#20481E" alignItems="center">
+            <Center color="#20481E" h="100%">
+              <TextBox/>
+            </Center>
+          </Box>
+        </Container>
     </ChakraProvider>
   );
 }
