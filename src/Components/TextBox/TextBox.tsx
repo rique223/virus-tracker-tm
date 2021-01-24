@@ -6,15 +6,21 @@ import React from 'react';
 
 const TextBox: React.FC = (): ReactElement => {
   return (
-    <Box padding="4" maxW="100%">
+    <Box 
+      maxW="100%"
+      d="flex" 
+      my="10%" 
+      position="relative" 
+      justifyContent="center" 
+      flexWrap="wrap" >
         <Text 
             bgClip="text"
-            fontSize="38px"
+            fontSize="2.03rem"
             color="#20481E" 
             fontWeight="bold"
             textAlign="center"
             px="4%"
-            lineHeight="45px"
+            lineHeight="35px"
             >
             O TheVirusTracker™ pretende trazer praticidade para a visualização de 
             dados relacionados à pandemia de Corona Vírus no Brasil: 
