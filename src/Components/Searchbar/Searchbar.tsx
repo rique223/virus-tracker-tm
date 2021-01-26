@@ -1,16 +1,27 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 import { Button, Center, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Props } from 'framer-motion/types/types';
 
-const Searchbar: React.FC = (): ReactElement => {
+const Searchbar: React.FC<Props> = (props): ReactElement => {
+  const [searchValue, setSearchValue] = useState('');
+
+  const handleSearchValue = (event: React.ChangeEvent): void => {
+    const target = event.target as HTMLInputElement;
+
+    setSearchValue(target.value);
+  }
+
   const search = (event: React.MouseEvent): void => {
-    console.log("DEU CERTO!");
+    event.preventDefault();
+    props.searchCOVID(searchValue);
   }
 
   const searchEnter = (event: React.KeyboardEvent): void => {
     if(event.key === 'Enter') {
-      console.log("Deu Cert com Enter!");
+      event.preventDefault();
+      props.searchCOVID(searchValue);
     }
   }
 
@@ -20,7 +31,8 @@ const Searchbar: React.FC = (): ReactElement => {
         <Input 
           placeholder="Pesquise uma cidade do Brasil..." 
           fontSize="32px"
-          size="lg" 
+          size="lg"
+          onChange={handleSearchValue}
           onKeyPress={searchEnter}
           height="99px"
           variant="outline" 

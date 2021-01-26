@@ -25,3 +25,4 @@ yarn-error.log*
 .eslintcache
 .eslintcache
 .eslintcache
+src/utils/NAOCOMITAISSOAQUI.ts
