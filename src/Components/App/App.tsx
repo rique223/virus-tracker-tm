@@ -23,13 +23,13 @@ const App: React.FC = (): ReactElement => {
         <Container maxW="100%" m={0} p={0} maxH="100%">
           <Box bg="#5CDB96" w="100%" maxH="40%" h="40%" p={2} color="White">
             <NavBar></NavBar>
-            <Searchbar/>
-            <TextCity/>
+            <Searchbar />
+            <TextCity />
           </Box>
           
           <Box bg="#EAEFEC" w="100%" maxH="60%" h="60%" p={0} color="#20481E" alignItems="center">
             <Center color="#20481E" h="100%">
-              <TextBox/>
+              <TextBox />
             </Center>
           </Box>
         </Container>
