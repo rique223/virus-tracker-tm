@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /// <reference types="react-scripts" />
 
+// Custom type created directly at the Typescript Models Object
+// for ease of use and to remove the necessity for import statements in the components
 namespace Models {
-
   interface CovidData {
     city: string;
     city_ibge_code: number;
