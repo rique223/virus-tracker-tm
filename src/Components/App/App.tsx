@@ -8,7 +8,6 @@ import { extendTheme } from "@chakra-ui/react";
 import React, { FunctionComponent, ReactElement, useState } from "react";
 import Searchbar from "../searchBar/Searchbar";
 import apiCNPJ from "../../api/covidAPI";
-import { NOMEM } from "dns";
 
 const App: React.FC = (): ReactElement => {
   const [covidData, setCovidData] = useState({} as Models.CovidData);
