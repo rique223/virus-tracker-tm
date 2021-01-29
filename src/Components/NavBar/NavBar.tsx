@@ -80,8 +80,6 @@ const NavBar: React.FC = (): ReactElement => {
 								flexDir="column"
 								display="flex"
 								alignItems="flex-end"
-								borderTopWidth="1px"
-								borderTopColor="rgba(0, 0, 0, .25)"
 							>
 								<MenuIcon
 									label="Veja o repo desse projeto no Github!"
