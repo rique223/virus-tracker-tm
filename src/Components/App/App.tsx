@@ -6,9 +6,9 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 
 import React, { FunctionComponent, ReactElement, useState } from "react";
-import Searchbar from "../searchBar/Searchbar";
+import Searchbar from "../searchbar/Searchbar";
 import apiCNPJ from "../../api/covidAPI";
-import TextCity from "../TextCity/TextCity";
+import TextCity from "../textCity/TextCity";
 
 const App: React.FC = (): ReactElement => {
   const [covidData, setCovidData] = useState({} as Models.CovidData);
