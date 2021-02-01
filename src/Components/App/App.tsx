@@ -1,4 +1,3 @@
-import "./App.css";
 import { Box, Container, Center } from "@chakra-ui/react";
 import TextBox from "../textBox/TextBox";
 import NavBar from "../navBar/NavBar";
@@ -9,6 +8,7 @@ import React, { FunctionComponent, ReactElement, useState } from "react";
 import Searchbar from "../searchbar/Searchbar";
 import apiCNPJ from "../../api/covidAPI";
 import TextCity from "../textCity/TextCity";
+import CardData from "../cardData/CardData";
 
 const App: React.FC = (): ReactElement => {
   const [covidData, setCovidData] = useState({} as Models.CovidData);
@@ -57,8 +57,9 @@ const App: React.FC = (): ReactElement => {
           color="#20481E"
           alignItems="center"
         >
-          <Center color="#20481E" h="100%">
-            <TextBox />
+          <Center color="#20481E" bg="#EAEFEC" h="100%">
+            {/* <TextBox /> */}
+            <CardData />
           </Center>
         </Box>
       </Container>
