@@ -1,4 +1,3 @@
-import "./NavBar.css";
 import {
 	Box,
 	Flex,
@@ -22,8 +21,8 @@ import { faHome, faVirus, faInfo } from "@fortawesome/free-solid-svg-icons";
 import { faGithubAlt, faPinterestP } from "@fortawesome/free-brands-svg-icons";
 
 import { Link as ReactRouterLink } from "react-router-dom";
-import ItemList from "../ItemList/ItemList";
-import MenuIcon from "../MenuIcon/MenuIcon";
+import ItemList from "./ItemList";
+import MenuIcon from "./MenuIcon";
 
 import React, { ReactElement } from "react";
 
@@ -54,7 +53,13 @@ const NavBar: React.FC = (): ReactElement => {
 					<DrawerOverlay>
 						<DrawerContent backgroundColor="#EAEFEC">
 							<DrawerCloseButton />
-							<DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
+							<DrawerHeader
+								borderBottomWidth="1px"
+								fontWeight="hairline"
+								fontSize="30px"
+							>
+								Menu
+							</DrawerHeader>
 
 							<DrawerBody px={0}>
 								<OrderedList mx={0} w="100%">

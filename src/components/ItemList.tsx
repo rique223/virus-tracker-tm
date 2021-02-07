@@ -24,7 +24,12 @@ const ItemList = (props: {
 					alignItems="center"
 					justifyContent="center"
 				>
-					<Text textTransform="uppercase" color="#20481E" fontSize="20px">
+					<Text
+						textTransform="uppercase"
+						color="#20481E"
+						fontSize="20px"
+						fontWeight="hairline"
+					>
 						{props.icon}
 						&nbsp;
 						{props.name}
