@@ -1,4 +1,4 @@
-import { Box, Text, WrapItem, Center, Wrap } from "@chakra-ui/react";
+import { Box, Text, Center, Wrap } from "@chakra-ui/react";
 import { ReactElement } from "react";
 
 import React from "react";
@@ -68,18 +68,26 @@ const CardData: React.FC = (): ReactElement => {
         justifyContent="space-between"
       >
         <Center
-          h="30%"
-          bg="red.200"
+          w="35%"
           m="0"
           pos="relative"
           d="flex"
           flexDirection="column"
+          borderRight="1px solid #BBBBBB"
         >
-          <Text>Casos por 100mil habitantes</Text>
+          <Text
+            fontStyle="normal"
+            fontWeight="300"
+            fontSize="1.813rem"
+            lineHeight="33px"
+            textColor="#1E4730"
+          >
+            Casos por 100mil habitantes
+          </Text>
           <Text>5.160,1559</Text>
         </Center>
         <Center
-          h="30%"
+          w="30%"
           bg="green.200"
           mx="4px"
           pos="relative"
@@ -90,7 +98,7 @@ const CardData: React.FC = (): ReactElement => {
           <Text>2.073</Text>
         </Center>
         <Center
-          h="30%"
+          w="30%"
           bg="tomato"
           m="0"
           pos="relative"
