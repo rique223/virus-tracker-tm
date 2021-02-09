@@ -11,7 +11,7 @@ namespace Models {
 		results?: result[];
 	}
 
-	interface result {
+	interface Result {
 		city: string;
 		city_ibge_code: number;
 		date?: string;
@@ -30,5 +30,17 @@ namespace Models {
 		order_for_place?: number;
 		place_type?: string;
 		state: string;
+	}
+
+	interface appHookReturn {
+		covidData: Result;
+		theme: any;
+		searchCOVID: (city: string) => Promise<void>;
+	}
+
+	interface searchbarHookReturn {
+		handleSearchValue: (event: React.ChangeEvent) => void;
+		search: (event: React.MouseEvent) => void;
+		searchEnter: (event: React.KeyboardEvent) => void;
 	}
 }

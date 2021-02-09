@@ -1,18 +1,19 @@
+import React, { ReactElement } from "react";
 import { Box, Container, Center } from "@chakra-ui/react";
-import TextBox from "./TextBox";
-import NavBar from "./NavBar";
 import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
-
-import React, { FunctionComponent, ReactElement, useState } from "react";
-import Searchbar from "./Searchbar";
+import { useState } from "react";
 import apiCNPJ from "../api/covidAPI";
-import TextCity from "./TextCity";
 
-const App: React.FC = (): ReactElement => {
-	const [covidData, setCovidData] = useState({} as Models.result);
+import Searchbar from "../components/Searchbar";
+import TextCity from "../components/TextCity";
+import TextBox from "../components/TextBox";
+import NavBar from "../components/NavBar";
 
-	const theme: FunctionComponent = extendTheme({
+const App = (): ReactElement => {
+	const [covidData, setCovidData] = useState({} as Models.Result);
+
+	const theme = extendTheme({
 		fonts: {
 			body: "Roboto, sans-serif",
 			heading: "Roboto, sans-serif",
@@ -30,7 +31,7 @@ const App: React.FC = (): ReactElement => {
 				`/dataset/covid19/caso_full/data?city=${city}&is_last=True`
 			);
 
-			setCovidData(results ? results[0] : ({} as Models.result));
+			setCovidData(results ? results[0] : ({} as Models.Result));
 
 			console.log(covidData);
 		} catch (err) {

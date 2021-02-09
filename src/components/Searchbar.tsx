@@ -8,12 +8,15 @@ import {
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { Props } from "framer-motion/types/types";
 
-const Searchbar: React.FC<Props> = (props): ReactElement => {
+const Searchbar = ({
+	searchCOVID,
+}: {
+	searchCOVID: (city: string) => Promise<void>;
+}): ReactElement => {
 	const [searchValue, setSearchValue] = useState("");
 
-	// Handler that updates the searchValue with the value typed in the input
+	// Handler that updates the searchValue state with the value typed in the input
 	const handleSearchValue = (event: React.ChangeEvent): void => {
 		if (!event) {
 			return;
@@ -31,7 +34,7 @@ const Searchbar: React.FC<Props> = (props): ReactElement => {
 		}
 
 		event.preventDefault();
-		props.searchCOVID(searchValue);
+		searchCOVID(searchValue);
 	};
 
 	// Function that executes the API request everytime enter is pressed inside of the input
@@ -42,7 +45,7 @@ const Searchbar: React.FC<Props> = (props): ReactElement => {
 
 		if (event.key === "Enter") {
 			event.preventDefault();
-			props.searchCOVID(searchValue);
+			searchCOVID(searchValue);
 		}
 	};
 
