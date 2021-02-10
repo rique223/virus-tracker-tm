@@ -81,32 +81,71 @@ const CardData: React.FC = (): ReactElement => {
             fontSize="1.813rem"
             lineHeight="33px"
             textColor="#1E4730"
+            my="5px"
           >
             Casos por 100mil habitantes
           </Text>
-          <Text>5.160,1559</Text>
+          <Text
+            fontStyle="normal"
+            fontWeight="bold"
+            fontSize="2.5rem"
+            line-height="47px"
+            textColor="#459B41"
+            my="5px"
+          >
+            5.160,1559
+          </Text>
         </Center>
         <Center
-          w="30%"
-          bg="green.200"
-          mx="4px"
-          pos="relative"
-          d="flex"
-          flexDirection="column"
-        >
-          <Text>Número de mortes</Text>
-          <Text>2.073</Text>
-        </Center>
-        <Center
-          w="30%"
-          bg="tomato"
+          w="35%"
           m="0"
           pos="relative"
           d="flex"
           flexDirection="column"
+          borderRight="1px solid #BBBBBB"
         >
-          <Text>Novos casos</Text>
-          <Text>157</Text>
+          <Text
+            fontStyle="normal"
+            fontWeight="300"
+            fontSize="1.813rem"
+            lineHeight="33px"
+            textColor="#1E4730"
+            my="5px"
+          >
+            Número de mortes
+          </Text>
+          <Text
+            fontStyle="normal"
+            fontWeight="bold"
+            fontSize="2.5rem"
+            line-height="47px"
+            textColor="#459B41"
+            my="5px"
+          >
+            2.073
+          </Text>
+        </Center>
+        <Center w="30%" m="0" pos="relative" d="flex" flexDirection="column">
+          <Text
+            fontStyle="normal"
+            fontWeight="300"
+            fontSize="1.813rem"
+            lineHeight="33px"
+            textColor="#1E4730"
+            my="5px"
+          >
+            Novos casos
+          </Text>
+          <Text
+            fontStyle="normal"
+            fontWeight="bold"
+            fontSize="2.5rem"
+            line-height="47px"
+            textColor="#459B41"
+            my="5px"
+          >
+            157
+          </Text>
         </Center>
       </Box>
     </Box>
