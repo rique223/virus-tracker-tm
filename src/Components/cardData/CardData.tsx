@@ -20,7 +20,7 @@ const CardData: React.FC = (): ReactElement => {
     >
       <Center
         w="100%"
-        h="70%"
+        h="100%"
         d="flex"
         flexDirection="column"
         flexWrap="wrap"
@@ -68,7 +68,7 @@ const CardData: React.FC = (): ReactElement => {
         justifyContent="space-between"
       >
         <Center
-          w="35%"
+          w="33%"
           m="0"
           pos="relative"
           d="flex"
@@ -93,11 +93,12 @@ const CardData: React.FC = (): ReactElement => {
             textColor="#459B41"
             my="5px"
           >
+            {" "}
             5.160,1559
           </Text>
         </Center>
         <Center
-          w="35%"
+          w="33%"
           m="0"
           pos="relative"
           d="flex"
@@ -122,10 +123,11 @@ const CardData: React.FC = (): ReactElement => {
             textColor="#459B41"
             my="5px"
           >
+            {" "}
             2.073
           </Text>
         </Center>
-        <Center w="30%" m="0" pos="relative" d="flex" flexDirection="column">
+        <Center w="33%" m="0" pos="relative" d="flex" flexDirection="column">
           <Text
             fontStyle="normal"
             fontWeight="300"
@@ -144,6 +146,7 @@ const CardData: React.FC = (): ReactElement => {
             textColor="#459B41"
             my="5px"
           >
+            {" "}
             157
           </Text>
         </Center>

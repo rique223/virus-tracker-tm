@@ -42,7 +42,7 @@ const App: React.FC = (): ReactElement => {
   return (
     <ChakraProvider theme={theme}>
       <Container maxW="100%" m={0} p={0} maxH="100%">
-        <Box bg="#5CDB96" w="100%" maxH="40%" h="40%" p={2} color="White">
+        <Box bg="#5CDB96" w="100%" maxH="100%" h="40%" p={2} color="White">
           <NavBar></NavBar>
           <Searchbar searchCOVID={searchCOVID} />
           <TextCity />
@@ -51,15 +51,15 @@ const App: React.FC = (): ReactElement => {
         <Box
           bg="#EAEFEC"
           w="100%"
-          maxH="60%"
+          maxH="100%"
           h="60%"
           p={0}
           color="#20481E"
           alignItems="center"
         >
           <Center color="#20481E" bg="#EAEFEC" h="100%">
-            {/* <TextBox /> */}
-            <CardData />
+            {Object.keys(covidData).length != 0 && <CardData />}
+            {Object.keys(covidData).length === 0 && <TextBox />}
           </Center>
         </Box>
       </Container>
