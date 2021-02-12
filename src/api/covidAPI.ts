@@ -4,11 +4,12 @@ import { apiKey } from "../utils/NAOCOMITAISSOAQUI";
 
 // Axios instance created for better scalability and ease of use of the Request package
 const apiCNPJ = axios.create({
-  baseURL,
-  headers: {
-    "X-Requested-With": "XMLHttpRequest",
-    Authorization: `${apiKey}`,
-  },
+	baseURL,
+	headers: {
+		"X-Requested-With": "XMLHttpRequest",
+		Authorization: `${apiKey}`,
+		"Content-Type": "application/json",
+	},
 });
 
 export default apiCNPJ;

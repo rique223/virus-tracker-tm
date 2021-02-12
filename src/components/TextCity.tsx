@@ -6,14 +6,14 @@ import React from "react";
 const TextCity: React.FC = (): ReactElement => {
   let city: string = "Goiânia, Goiás, Brasil";
   let population: number = 1536097;
+
   return (
-    <Center d="flex" my="15px" maxW="100%" flexDirection="column">
+    <Center d="flex" maxW="100%" h="8%" flexDirection="column">
       <Text
         fontSize="5rem"
         color="#fff"
         fontWeight="bold"
         textShadow="1px 1px 5px gray"
-        mx="4%"
       >
         {city}
       </Text>
@@ -23,9 +23,8 @@ const TextCity: React.FC = (): ReactElement => {
         color="#fff"
         fontWeight="bold"
         textShadow="1px 1px 5px gray"
-        mx="4%"
       >
-        População: {population.toString}
+        População: {population.toString()}
       </Text>
     </Center>
   );
