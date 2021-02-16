@@ -1,5 +1,11 @@
 import React, { ReactElement } from "react";
-import { Box, Container, Center } from "@chakra-ui/react";
+import {
+	Box,
+	Container,
+	Center,
+	SlideFade,
+	useDisclosure,
+} from "@chakra-ui/react";
 import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 import { useState } from "react";
@@ -12,6 +18,7 @@ import NavBar from "../components/NavBar";
 
 const App = (): ReactElement => {
 	const [covidData, setCovidData] = useState({} as Models.Result);
+	const { isOpen, onOpen, onClose } = useDisclosure();
 
 	const theme = extendTheme({
 		fonts: {
@@ -24,14 +31,25 @@ const App = (): ReactElement => {
 	// Function that executes the GET REQUEST to the API.
 	// This function is passed as a property to the searchbar component.
 	const searchCOVID = async (city: string): Promise<void> => {
-		try {
-			const {
-				data: { results },
-			} = await apiCNPJ.get<Models.RootObject>(
-				`/dataset/covid19/caso_full/data?city=${city}&is_last=True`
-			);
+		onClose();
+		if (!city) {
+			setCovidData({} as Models.Result);
+			console.log("DEU CERTO");
+			return;
+		}
 
-			setCovidData(results ? results[0] : ({} as Models.Result));
+		try {
+			await apiCNPJ
+				.get<Models.RootObject>(
+					`/dataset/covid19/caso_full/data?city=${city}&is_last=True`
+				)
+				.then((res) => {
+					const {
+						data: { results },
+					} = res;
+					setCovidData(results ? results[0] : ({} as Models.Result));
+					onOpen();
+				});
 
 			console.log(covidData);
 		} catch (err) {
@@ -46,7 +64,11 @@ const App = (): ReactElement => {
 				<Box bg="#5CDB96" w="100%" h="50%" p={2} color="White">
 					<NavBar />
 					<Searchbar searchCOVID={searchCOVID} />
-					<TextCity />
+					{Object.keys(covidData).length === 0 ? null : (
+						<SlideFade offsetY="20px" in={isOpen}>
+							<TextCity covidData={covidData} />
+						</SlideFade>
+					)}
 				</Box>
 
 				<Box
