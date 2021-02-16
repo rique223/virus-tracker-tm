@@ -15,6 +15,7 @@ const Searchbar = ({
 	searchCOVID: (city: string) => Promise<void>;
 }): ReactElement => {
 	const [searchValue, setSearchValue] = useState("");
+	const [inputHeight, setInputHeight] = useState("60%");
 
 	// Handler that updates the searchValue state with the value typed in the input
 	const handleSearchValue = (event: React.ChangeEvent): void => {
@@ -29,28 +30,32 @@ const Searchbar = ({
 
 	// Function that executes the API request everytime the button is clicked at
 	const search = (event: React.MouseEvent): void => {
-		if (!event) {
-			return;
+		if (!event || !searchValue) {
+			setInputHeight("60%");
+			searchCOVID(searchValue);
+		} else {
+			event.preventDefault();
+			searchCOVID(searchValue);
+			setInputHeight("35%");
 		}
-
-		event.preventDefault();
-		searchCOVID(searchValue);
 	};
 
 	// Function that executes the API request everytime enter is pressed inside of the input
 	const searchEnter = (event: React.KeyboardEvent): void => {
-		if (!event) {
-			return;
-		}
-
-		if (event.key === "Enter") {
-			event.preventDefault();
+		if (!event || !searchValue) {
+			setInputHeight("60%");
 			searchCOVID(searchValue);
+		} else {
+			if (event.key === "Enter") {
+				event.preventDefault();
+				searchCOVID(searchValue);
+				setInputHeight("35%");
+			}
 		}
 	};
 
 	return (
-		<Center h="55%">
+		<Center h={inputHeight}>
 			<InputGroup w="68%" size="99px">
 				<Input
 					placeholder="Pesquise uma cidade do Brasil..."
