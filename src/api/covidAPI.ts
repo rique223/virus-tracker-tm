@@ -3,7 +3,7 @@ import { baseURL } from "../constants";
 import { apiKey } from "../utils/NAOCOMITAISSOAQUI";
 
 // Axios instance created for better scalability and ease of use of the Request package
-const apiCNPJ = axios.create({
+const apiCovid = axios.create({
 	baseURL,
 	headers: {
 		"X-Requested-With": "XMLHttpRequest",
@@ -12,4 +12,4 @@ const apiCNPJ = axios.create({
 	},
 });
 
-export default apiCNPJ;
+export default apiCovid;

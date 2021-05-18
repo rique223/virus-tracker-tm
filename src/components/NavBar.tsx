@@ -5,12 +5,25 @@ import Menu from "./Menu";
 
 import { Link as ReactRouterLink } from "react-router-dom";
 
-import React, { ReactElement } from "react";
+import React, { ReactElement, SetStateAction } from "react";
 
-const NavBar: React.FC = (): ReactElement => {
+interface Props {
+	setCovidData: (covidData: Models.Result) => void
+	setShowDataCard: (showDataCard: SetStateAction<boolean>) => void
+}
+
+const NavBar: React.FC<Props> = ({ setCovidData, setShowDataCard }): ReactElement => {
+	const cleanse = () => {
+		setCovidData({} as Models.Result);
+		setShowDataCard(false);
+	}
+
 	return (
 		<Flex>
-			<Box p="4">
+			<Box
+				p="4"
+				onClick={cleanse}
+			>
 				<Link
 					as={ReactRouterLink}
 					to="/"

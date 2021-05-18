@@ -1,16 +1,18 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Center, Text } from "@chakra-ui/react";
 import { ReactElement } from "react";
 
 import React from "react";
 
 const TextBox: React.FC = (): ReactElement => {
 	return (
-		<Box
+		<Center
 			maxW="100%"
-			d="flex"
-			position="relative"
-			justifyContent="center"
 			flexWrap="wrap"
+			color="#20481E"
+			bg="#EAEFEC"
+			w="100%"
+			h="60%"
+			p={0}
 		>
 			<Text
 				bgClip="text"
@@ -26,7 +28,7 @@ const TextBox: React.FC = (): ReactElement => {
 				de uma cidade brasileira acima e serão retornadas as principais
 				estatísticas relacionadas ao avanço do Sars-CoV-2 neste local.
 			</Text>
-		</Box>
+		</Center>
 	);
 };
 

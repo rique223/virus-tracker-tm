@@ -11,7 +11,7 @@ const TextCity: React.FC<Props> = ({ covidData }): ReactElement => {
 	return (
 		<Center d="flex" maxW="100%" h="8%" flexDirection="column">
 			<Text
-				fontSize="5rem"
+				fontSize="80px"
 				color="#fff"
 				fontWeight="bold"
 				textShadow="1px 1px 5px gray"

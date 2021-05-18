@@ -8,7 +8,7 @@ const menuIcon = (props: {
 }) => {
 	return (
 		<Tooltip label={props.label} aria-label="Um tooltip" placement="auto">
-			<Link href={props.href} mt={3} fontWeight="hairline">
+			<Link target="blank" href={props.href} mt={3} fontWeight="hairline">
 				{props.icon}
 			</Link>
 		</Tooltip>

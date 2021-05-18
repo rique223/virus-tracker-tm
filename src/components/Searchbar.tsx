@@ -9,13 +9,12 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const Searchbar = ({
-	searchCOVID,
-}: {
-	searchCOVID: (city: string) => Promise<void>;
-}): ReactElement => {
+interface searchCovidFunction {
+	searchCOVID: (city: string) => Promise<void>
+}
+
+const Searchbar = ({ searchCOVID }: searchCovidFunction): ReactElement => {
 	const [searchValue, setSearchValue] = useState("");
-	const [inputHeight, setInputHeight] = useState("60%");
 
 	// Handler that updates the searchValue state with the value typed in the input
 	const handleSearchValue = (event: React.ChangeEvent): void => {
@@ -30,39 +29,30 @@ const Searchbar = ({
 
 	// Function that executes the API request everytime the button is clicked at
 	const search = (event: React.MouseEvent): void => {
-		if (!event || !searchValue) {
-			setInputHeight("60%");
-			searchCOVID(searchValue);
-		} else {
-			event.preventDefault();
-			searchCOVID(searchValue);
-			setInputHeight("35%");
-		}
+		event.preventDefault();
+		searchCOVID(searchValue);
+		setSearchValue("");
 	};
 
 	// Function that executes the API request everytime enter is pressed inside of the input
 	const searchEnter = (event: React.KeyboardEvent): void => {
-		if (!event || !searchValue) {
-			setInputHeight("60%");
+		if (event.key === "Enter") {
+			event.preventDefault();
 			searchCOVID(searchValue);
-		} else {
-			if (event.key === "Enter") {
-				event.preventDefault();
-				searchCOVID(searchValue);
-				setInputHeight("35%");
-			}
+			setSearchValue("");
 		}
 	};
 
 	return (
-		<Center h={inputHeight}>
+		<Center h="60%">
 			<InputGroup w="68%" size="99px">
 				<Input
 					placeholder="Pesquise uma cidade do Brasil..."
 					fontSize="32px"
 					size="lg"
-					onChange={handleSearchValue}
-					onKeyPress={searchEnter}
+					onChange={(e) => handleSearchValue(e)}
+					onKeyPress={(e) => searchEnter(e)}
+					value={searchValue}
 					height="99px"
 					variant="outline"
 					textColor="#066666"
@@ -72,13 +62,14 @@ const Searchbar = ({
 					borderColor="#000"
 					borderRadius="13px"
 					boxShadow="0px 2px 4px 2px rgba(0, 0, 0, 0.25)"
+					autoFocus
 				/>
 
 				<InputRightElement
 					m="0"
 					children={
 						<Button
-							onClick={search}
+							onClick={(e) => search(e)}
 							backgroundColor="#459B41"
 							variant="solid"
 							size="lg"
